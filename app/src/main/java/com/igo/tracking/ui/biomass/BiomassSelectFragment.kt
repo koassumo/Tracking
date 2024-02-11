@@ -35,9 +35,41 @@ class BiomassSelectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.bsWeightSeekbar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                binding.bsWeight.requestFocus()
+                binding.bsWeight.text =
+                    Editable.Factory.getInstance().newEditable(progress.toString())
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+        })
+
+        binding.bsMoistureSeekbar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                binding.bsMoisture.requestFocus()
+                binding.bsMoisture.text =
+                    Editable.Factory.getInstance().newEditable(progress.toString())
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+        })
+
         binding.bsCarbonDmSeekbar.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                // Переключить фокус на bs_carbon_dm
+                binding.bsCarbonDm.requestFocus()
                 binding.bsCarbonDm.text =
                     Editable.Factory.getInstance().newEditable(progress.toString())
             }

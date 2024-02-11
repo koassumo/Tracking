@@ -12,11 +12,18 @@
     <string name="menu_pyrolysis">Pyrolysis</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="biomass_package">Biomass Package</string>
-    <string name="biomass_type">Type</string>
-    <string name="biomass_weight">Weight</string>
-    <string name="biomass_moisture">Moisture</string>
-    <string name="biomass_carbon_dm_title">Carbon in dry matter</string>
+    <string name="biomass_package">Biomass Package #</string>
+    <string name="biomass_type">Type:</string>
+    <string name="biomass_weight">Weight:</string>
+    <string name="biomass_moisture">Moisture:</string>
+    <string name="biomass_carbon_dm_title">Carbon in dry matter:</string>
+
+    <string name="bs_package">Select biomass data</string>
+    <string name="bs_type">Type</string>
+    <string name="bs_weight">Weight, kg</string>
+    <string name="bs_moisture">Moisture, %</string>
+    <string name="bs_carbon_dm_title">Carbon in dry matter, %</string>
+
     <string name="biomass_type_1">Wood chips</string>
     <string name="biomass_type_2">Algae</string>
     <string name="biomass_type_3">Other</string>

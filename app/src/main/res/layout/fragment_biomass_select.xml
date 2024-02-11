@@ -10,12 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/step_huge">
+        android:paddingBottom="@dimen/step_huge_xxx">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bs_title"
             style="@style/txt_title"
-            android:text="@string/biomass_package"
+            android:text="@string/bs_package"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/bs_type_title"
-            style="@style/txt_common"
-            android:text="@string/biomass_type"
+            style="@style/txt_common_first"
+            android:text="@string/bs_type"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_title" />
 
@@ -64,7 +64,7 @@
         <TextView
             android:id="@+id/bs_weight_title"
             style="@style/txt_common_first"
-            android:text="@string/biomass_weight"
+            android:text="@string/bs_weight"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_radio_group" />
 
@@ -79,7 +79,6 @@
             app:layout_constraintTop_toBottomOf="@id/bs_weight_title"
             app:boxStrokeWidth="@dimen/stroke_small"
             app:boxStrokeWidthFocused="@dimen/stroke_large"
-            android:hint="@string/bs_weight_hint"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/bs_weight"
@@ -87,15 +86,29 @@
                 android:layout_width="@dimen/step_huge"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
+                android:text="1000"
+                android:textAlignment="textEnd"
                 android:maxLength="10" />
             />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/bs_weight_seekbar"
+            style="@style/all_common"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100000"
+            android:progress="1000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bs_weight_layout"
+            app:layout_constraintTop_toTopOf="@+id/bs_weight_layout"
+            />
+
         <TextView
             android:id="@+id/bs_moisture_title"
             style="@style/txt_common_first"
-            android:text="@string/biomass_moisture"
+            android:text="@string/bs_moisture"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_weight_layout" />
 
@@ -110,23 +123,36 @@
             app:layout_constraintTop_toBottomOf="@id/bs_moisture_title"
             app:boxStrokeWidth="@dimen/stroke_small"
             app:boxStrokeWidthFocused="@dimen/stroke_large"
-            android:hint="@string/bs_moisture_hint"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/bs_moisture"
                 style="@style/all_common"
                 android:layout_width="@dimen/step_huge"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="50"
                 android:inputType="numberDecimal"
                 android:maxLength="10" />
             />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/bs_moisture_seekbar"
+            style="@style/all_common"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bs_moisture_layout"
+            app:layout_constraintTop_toTopOf="@+id/bs_moisture_layout"
+            />
+
         <TextView
             android:id="@+id/bs_carbon_dm_title"
             style="@style/txt_common_first"
-            android:text="@string/biomass_carbon_dm_title"
+            android:text="@string/bs_carbon_dm_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_moisture_layout" />
 
@@ -141,12 +167,12 @@
             app:layout_constraintTop_toBottomOf="@id/bs_carbon_dm_title"
             app:boxStrokeWidth="@dimen/stroke_small"
             app:boxStrokeWidthFocused="@dimen/stroke_large"
-            android:hint="@string/bs_moisture_hint"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/bs_carbon_dm"
                 style="@style/all_common"
                 android:text="50"
+                android:textAlignment="textEnd"
                 android:layout_width="@dimen/step_huge"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
@@ -164,9 +190,9 @@
             android:progress="50"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/bs_carbon_dm_layout"
-            app:layout_constraintTop_toTopOf="@+id/bs_carbon_dm_layout">
+            app:layout_constraintTop_toTopOf="@+id/bs_carbon_dm_layout"
+            />
 
-        </androidx.appcompat.widget.AppCompatSeekBar>
 
 
 <!--            <NumberPicker-->
