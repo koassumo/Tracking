@@ -12,14 +12,23 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.igo.tracking.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_biomass"
+        android:name="com.igo.tracking.ui.biomass.BiomassFragment"
+        android:label="@string/menu_biomass"
+        tools:layout="@layout/fragment_biomass" >
+        <action
+            android:id="@+id/action_nav_biomass_to_biomassSelectFragment"
+            app:destination="@id/biomassSelectFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.igo.tracking.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_pyrolysis"
+        android:name="com.igo.tracking.ui.pyrolysis.PyrolysisFragment"
+        android:label="@string/menu_pyrolysis"
+        tools:layout="@layout/fragment_pyrolysis" />
+    <fragment
+        android:id="@+id/biomassSelectFragment"
+        android:name="com.igo.tracking.ui.biomass.BiomassSelectFragment"
+        android:label="fragment_biomass_select"
+        tools:layout="@layout/fragment_biomass_select" />
 </navigation>

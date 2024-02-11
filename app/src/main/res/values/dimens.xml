@@ -5,4 +5,144 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <!-- ********************************  Universal  ********************************  -->
+
+
+    <!--heading-->
+    <dimen name="step_top_heading">36dp</dimen>
+    <dimen name="step_start_heading">12dp</dimen>
+
+    <!--lines-->
+    <dimen name="step_line_long">200dp</dimen>
+    <dimen name="step_line_short">20dp</dimen>
+
+
+    <!--large-->
+    <dimen name="step_huge_xxx">320dp</dimen>
+    <dimen name="step_huge_xx">300dp</dimen>
+    <dimen name="step_huge_x">180dp</dimen>
+    <dimen name="step_huge">100dp</dimen>
+
+    <dimen name="step_xxx_large">72dp</dimen>
+    <dimen name="step_xx_large">48dp</dimen>
+    <dimen name="step_x_large">40dp</dimen>
+    <dimen name="step_large_plus">28dp</dimen>
+    <dimen name="step_large">24dp</dimen>
+
+    <dimen name="stroke_width_large">4dp</dimen>
+
+    <!--normal-->
+    <dimen name="step_normal_plus">20dp</dimen>
+    <dimen name="step_normal_pl">16dp</dimen>
+    <dimen name="step_normal">12dp</dimen>
+    <dimen name="step_normal_too">8dp</dimen>
+    <dimen name="step_bottom_normal">12dp</dimen>
+    <dimen name="step_between_rv_items_normal">8dp</dimen>
+
+    <!--small-->
+    <dimen name="step_small">6dp</dimen>
+    <dimen name="step_x_small">4dp</dimen>
+    <dimen name="step_xx_small">2dp</dimen>
+    <dimen name="step_xxx_small">1dp</dimen>
+
+
+    <!--negative                               -->
+    <dimen name="step_minus_large">-32dp</dimen>
+    <dimen name="step_minus_normal">-24dp</dimen>
+    <dimen name="step_minus_small">-14dp</dimen>
+    <dimen name="step_negative">-10dp</dimen>
+
+
+    <!--     5     -->
+    <!-- ********************************  Card  ********************************  -->
+    <dimen name="card_radius_large">@dimen/step_large</dimen>
+    <dimen name="card_radius_normal">@dimen/step_normal_plus</dimen>
+    <dimen name="card_radius_normal_for_top">@dimen/step_normal_pl</dimen>
+    <dimen name="card_radius_normal_for_bottom">@dimen/step_large</dimen>
+    <dimen name="card_radius_small">@dimen/step_normal</dimen>
+
+    <dimen name="card_icon_normal">@dimen/step_x_large</dimen>
+    <dimen name="card_icon_small">@dimen/step_normal_plus</dimen>
+    <dimen name="indent_icon_normal">@dimen/step_large</dimen>
+    <dimen name="indent_icon_small">@dimen/step_xx_large</dimen>
+
+    <dimen name="card_height_long">100dp</dimen>
+    <dimen name="card_height_normal">100dp</dimen>
+    <dimen name="card_height_short">@dimen/step_x_large</dimen>
+
+    <dimen name="card_width">108dp</dimen>
+
+    <dimen name="card_width_medium">100dp</dimen>
+    <dimen name="card_width_small">76dp</dimen>
+    <dimen name="card_height_small">68dp</dimen>
+
+    <dimen name="stroke_width_normal">1dp</dimen>
+
+    <!--     5     -->
+    <!-- ********************************  Margin top  ********************************  -->
+    <dimen name="margin_top_large">@dimen/step_x_large</dimen>
+    <dimen name="margin_top_normal">@dimen/step_large</dimen>
+    <dimen name="margin_top_small">@dimen/step_small</dimen>
+
+    <!--     5     -->
+    <!-- ********************************  Margin top  ********************************  -->
+    <dimen name="margin_start_large">@dimen/step_x_large</dimen>
+    <dimen name="margin_start_normal">@dimen/step_normal_plus</dimen>
+    <dimen name="margin_start_small">@dimen/step_small</dimen>
+
+    <!--     5     -->
+    <!-- ********************************  Text  ********************************  -->
+    <dimen name="text_size_banner">32sp</dimen>
+    <dimen name="text_size_appbar">20sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_normal_plus">16sp</dimen>
+    <dimen name="text_size_normal">12sp</dimen>
+    <dimen name="text_size_small">8sp</dimen>
+
+
+    <dimen name="percent_icon">0.35</dimen>
+    <dimen name="percent_icon_long_view">0.11</dimen>
+
+    <!-- ********************************  Particular  ********************************  -->
+
+    <dimen name="radius_large">68dp</dimen>
+    <dimen name="radius_normal">36dp</dimen>
+    <dimen name="radius_small">20dp</dimen>
+    <dimen name="radius_x_small">12dp</dimen>
+    <dimen name="radius_xx_small">4dp</dimen>
+
+    <dimen name="radius_info_title_btn">22dp</dimen>
+
+
+    <!-- Elevation -->
+    <dimen name="elevation_large">4dp</dimen>
+    <dimen name="elevation_normal">1dp</dimen>
+    <dimen name="elevation_small">1dp</dimen>
+
+    <!--    -->
+    <dimen name="heading_padding_top">22dp</dimen>
+    <dimen name="heading_padding_left">16dp</dimen>
+    <dimen name="heading_size">22dp</dimen>
+    <dimen name="hint_padding_top">4dp</dimen>
+
+    <!--others-->
+    <dimen name="logo_width">100dp</dimen>
+    <dimen name="step_zero">0dp</dimen>
+    <dimen name="step_between_rv_items_small">6dp</dimen>
+    <dimen name="step_between_rv_items_medium">8dp</dimen>
+    <dimen name="divider_line_height">3dp</dimen>
+    <dimen name="divider_margin_top">10dp</dimen>
+    <item name="alpha_img_small" format="float" type="dimen">0.2</item>
+    <item name="alpha_img_medium" format="float" type="dimen">0.5</item>
+    <dimen name="alpha_img_large">1</dimen>
+    <dimen name="blank_space">150dp</dimen>
+    <dimen name="button_rounded_corner">16dp</dimen>
+
+    <dimen name="stroke_small">1dp</dimen>
+    <dimen name="stroke_large">4dp</dimen>
+
+
 </resources>

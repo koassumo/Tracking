@@ -17,15 +17,16 @@
 
 
     <!-- эти цвета не для системы, а для выбора пользователем (например, для конкрет.view)-->
-    <color name="primaryColor">#303b72</color>
-    <color name="primaryLightColor">@color/blue_200</color>
-    <color name="primaryDarkColor">#ac0800</color>
-    <color name="primaryTextColor">#000000</color>
+    <color name="primary_color">#303b72</color>
+    <color name="primary_color_light">@color/blue_200</color>
+    <color name="primary_color_dark">#ac0800</color>
+    <color name="primary_text_color">#000000</color>
     <color name="heading_colour">#ac0800</color>
 
 
-    <color name="secondaryColor">#00ab3c</color>
-    <color name="tertiaryColor">#5e7ab7</color>
+    <color name="secondary_color">#00ab3c</color>
+    <color name="tertiary_color">#5e7ab7</color>
+    <color name="tertiary_color_light">#A5B5D8</color>
 
 
     <!-- light theme palette -->

@@ -8,6 +8,25 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_biomass">Biomass</string>
+    <string name="menu_pyrolysis">Pyrolysis</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="biomass_package">Biomass Package</string>
+    <string name="biomass_type">Type</string>
+    <string name="biomass_weight">Weight</string>
+    <string name="biomass_moisture">Moisture</string>
+    <string name="biomass_carbon_dm_title">Carbon in dry matter</string>
+    <string name="biomass_type_1">Wood chips</string>
+    <string name="biomass_type_2">Algae</string>
+    <string name="biomass_type_3">Other</string>
+    <string name="bs_weight_hint">kg</string>
+    <string name="bs_weight_helper">none</string>
+    <string name="bs_moisture_hint">%</string>
+    <string name="bs_moisture_helper">none</string>
+
+    <string name="biomass_status_raw">row</string>
+    <string name="summary">Summary</string>
+
+
 </resources>
