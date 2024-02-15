@@ -3,16 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/bm_nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/bm_nav_home"
         android:name="com.igo.tracking.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_bm_nav_home_to_locFragment"
+            app:destination="@id/locFragment" />
+        <action
+            android:id="@+id/action_bm_nav_home_to_bm_nav_biomass"
+            app:destination="@id/bm_nav_biomass" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_biomass"
+        android:id="@+id/bm_nav_biomass"
         android:name="com.igo.tracking.ui.biomass.BiomassFragment"
         android:label="@string/menu_biomass"
         tools:layout="@layout/fragment_biomass" >
@@ -20,9 +27,17 @@
             android:id="@+id/action_nav_biomass_to_biomassSelectFragment"
             app:destination="@id/biomassSelectFragment" />
     </fragment>
-
     <fragment
-        android:id="@+id/nav_pyrolysis"
+        android:id="@+id/bm_nav_trans"
+        android:name="com.igo.tracking.ui.transport.TransportFragment"
+        android:label="@string/menu_trans"
+        tools:layout="@layout/fragment_transport" >
+        <action
+            android:id="@+id/action_bm_nav_trans_to_transportSelectFragment2"
+            app:destination="@id/transportSelectFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/bm_nav_pyrolysis"
         android:name="com.igo.tracking.ui.pyrolysis.PyrolysisFragment"
         android:label="@string/menu_pyrolysis"
         tools:layout="@layout/fragment_pyrolysis" />
@@ -30,5 +45,30 @@
         android:id="@+id/biomassSelectFragment"
         android:name="com.igo.tracking.ui.biomass.BiomassSelectFragment"
         android:label="fragment_biomass_select"
-        tools:layout="@layout/fragment_biomass_select" />
+        tools:layout="@layout/fragment_biomass_select" >
+        <action
+            android:id="@+id/action_biomassSelectFragment_to_locFragment"
+            app:destination="@id/locFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locFragment"
+        android:name="com.igo.tracking.ui.home.LocFragment"
+        android:label="fragment_loc"
+        tools:layout="@layout/fragment_loc" />
+    <fragment
+        android:id="@+id/transportSelectFragment2"
+        android:name="com.igo.tracking.ui.transport.TransportSelectFragment"
+        android:label="fragment_transport_select"
+        tools:layout="@layout/fragment_transport_select" />
+    <fragment
+        android:id="@+id/bm_nav_sale"
+        android:name="com.igo.tracking.ui.sale.SaleFragment"
+        android:label="fragment_sale"
+        tools:layout="@layout/fragment_sale" />
+    <fragment
+        android:id="@+id/bm_nav_corc"
+        android:name="com.igo.tracking.ui.corc.CorcFragment"
+        android:label="fragment_corc"
+        tools:layout="@layout/fragment_corc" />
+
 </navigation>

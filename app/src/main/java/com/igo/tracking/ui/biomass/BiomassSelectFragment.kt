@@ -6,9 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.SeekBar
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.igo.tracking.R
 import com.igo.tracking.databinding.FragmentBiomassSelectBinding
+import com.igo.tracking.model.constants.*
+import com.igo.tracking.model.entity.Biomass
+import java.util.Date
 
 
 class BiomassSelectFragment : Fragment() {
@@ -34,6 +40,43 @@ class BiomassSelectFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.bsMapBtn.setOnClickListener{
+            findNavController().navigate(
+                R.id.action_biomassSelectFragment_to_locFragment,
+                bundleOf(PACK_ID to 0)
+            )
+
+        }
+
+        // transfer data back to parent Fragment
+        binding.bsSubmit.setOnClickListener {
+
+            BiomassFragment.packsNumber ++
+
+            val checkedId = binding.bsRadioGroup.checkedRadioButtonId
+            val selectedRadioButton = binding.bsRadioGroup.findViewById<RadioButton>(checkedId)
+            val selectedRadioText = selectedRadioButton?.text.toString()
+
+
+            BiomassFragment.pack.add (Biomass(
+                BiomassFragment.packsNumber,
+                Date(),
+                selectedRadioText,
+                binding.bsWeight.text.toString().toDouble(),
+                binding.bsMoisture.text.toString().toDouble(),
+                binding.bsCarbonDm.text.toString().toDouble(),
+                "",
+                RAW
+            ))
+
+            parentFragmentManager.clearFragmentResult(RESPOND)
+            findNavController().popBackStack()
+        }
+
+
+
+
 
         binding.bsWeightSeekbar.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {

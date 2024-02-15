@@ -5,16 +5,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/bm_nav_home"
+            android:icon="@drawable/ic_projects_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_biomass"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/bm_nav_biomass"
+            android:icon="@drawable/ic_biomass_24"
             android:title="@string/menu_biomass" />
         <item
-            android:id="@+id/nav_pyrolysis"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/bm_nav_trans"
+            android:icon="@drawable/ic_trans_24"
+            android:title="@string/menu_trans" />
+        <item
+            android:id="@+id/bm_nav_pyrolysis"
+            android:icon="@drawable/ic_fire_24"
             android:title="@string/menu_pyrolysis" />
+        <item
+            android:id="@+id/bm_nav_sale"
+            android:icon="@drawable/ic_sale_24"
+            android:title="@string/menu_sale" />
+        <item
+            android:id="@+id/bm_nav_co2"
+            android:icon="@drawable/ic_co2_24"
+            android:title="@string/menu_corc" />
     </group>
 </menu>

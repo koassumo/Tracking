@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loc_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.LocFragment">
+
+
+    <fragment
+        android:id="@+id/loc_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/step_huge_x"
+        app:cardBackgroundColor="#CCFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/card_constraint">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/loc_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.70"/>
+
+            <TextView
+                android:id="@+id/loc_txt_plant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_blank_fragment"
+                android:layout_marginEnd="@dimen/step_x_large"
+                app:layout_constraintEnd_toStartOf="@+id/loc_guide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/loc_txt_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/hello_blank_fragment"
+                app:layout_constraintEnd_toStartOf="@+id/loc_guide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loc_txt_plant" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loc_ok"
+                style="@style/btn_common"
+                android:layout_width="@dimen/step_zero"
+                android:layout_margin="@dimen/step_zero"
+                android:text="@string/submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/loc_guide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loc_change"
+                style="@style/btn_common"
+                android:layout_width="@dimen/step_zero"
+                android:layout_margin="@dimen/step_zero"
+                android:text="@string/change"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/loc_guide"
+                app:layout_constraintTop_toBottomOf="@id/loc_ok" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

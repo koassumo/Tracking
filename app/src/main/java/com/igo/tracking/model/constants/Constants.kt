@@ -1,9 +1,9 @@
 package com.igo.tracking.model.constants
 
+const val RESPOND = "RESPOND"
+const val NOT_SELECTED = "NOT_SELECTED"
 
 const val PACK_ID = "PACK_ID"
-const val GREY = "GREY"
-const val GREEN = "GREEN"
 
 const val GROUP_1 = "GROUP_1"
 const val GROUP_2 = "GROUP_2"

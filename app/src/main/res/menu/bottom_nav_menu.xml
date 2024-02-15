@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bm_nav_biomass"
+        android:icon="@drawable/ic_biomass_24"
+        android:title="@string/menu_biomass" />
+    <item
+        android:id="@+id/bm_nav_trans"
+        android:icon="@drawable/ic_trans_24"
+        android:title="@string/menu_trans" />
+    <item
+        android:id="@+id/bm_nav_pyrolysis"
+        android:icon="@drawable/ic_fire_24"
+        android:title="@string/menu_pyrolysis" />
+    <item
+        android:id="@+id/bm_nav_sale"
+        android:icon="@drawable/ic_sale_24"
+        android:title="@string/menu_sale" />
+    <item
+        android:id="@+id/bm_nav_corc"
+        android:icon="@drawable/ic_co2_24"
+        android:title="@string/menu_corc" />
+</menu>

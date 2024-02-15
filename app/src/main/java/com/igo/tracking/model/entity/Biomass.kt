@@ -7,8 +7,8 @@ data class Biomass (
     val biomassDate: Date,
     val biomassType: String,
     val biomassWeight: Double,
-    val biomassMoisture: Double,
+    var biomassMoisture: Double,
     val biomassCarbonInDm: Double,
-    val biomassComment: Double,
+    val biomassComment: String,
     val biomassStatus: String
 )
