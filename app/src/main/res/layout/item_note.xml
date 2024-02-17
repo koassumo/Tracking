@@ -289,28 +289,28 @@
 
         <TextView
             android:id="@+id/i_biomass_in"
-            style="@style/cv_txt"
+            style="@style/cv_txt_time"
             android:text="@string/c_in"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i_biomass_progress_bar" />
 
         <TextView
             android:id="@+id/i_biomass_in_value"
-            style="@style/cv_txt_value"
+            style="@style/cv_txt_time_value"
             android:text=""
             app:layout_constraintStart_toEndOf="@id/i_biomass_in"
             app:layout_constraintTop_toTopOf="@id/i_biomass_in" />
 
         <TextView
             android:id="@+id/i_biomass_out"
-            style="@style/cv_txt"
+            style="@style/cv_txt_time"
             android:text="@string/c_out"
             app:layout_constraintStart_toStartOf="@+id/guide_center"
             app:layout_constraintTop_toBottomOf="@id/i_biomass_progress_bar" />
 
         <TextView
             android:id="@+id/i_biomass_out_value"
-            style="@style/cv_txt_value"
+            style="@style/cv_txt_time_value"
             android:text=""
             app:layout_constraintStart_toEndOf="@+id/i_biomass_out"
             app:layout_constraintTop_toTopOf="@id/i_biomass_out" />
