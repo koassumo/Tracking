@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.igo.tracking.R
 import com.igo.tracking.model.entity.Note
+import com.igo.tracking.model.entity.Wf
 
 
 class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
@@ -18,18 +19,19 @@ class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
     //================================================================================================
     // Т.е. по факту убрали свой class MyDiffUtilCallback и поручаем сравнение списка на входе
     // классу AsyncListDiffer
-    private val myDiffUtilCallBack = object : DiffUtil.ItemCallback<Note>() {
-        override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean =
-            oldItem.mTitle == newItem.mTitle
+    private val myDiffUtilCallBack = object : DiffUtil.ItemCallback<Wf>() {
+        override fun areItemsTheSame(oldItem: Wf, newItem: Wf): Boolean =
+            oldItem.biopacks == newItem.biopacks
+// тут видимо по каким полям сравнение
 
         @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: Note, newItem: Note): Boolean =
+        override fun areContentsTheSame(oldItem: Wf, newItem: Wf): Boolean =
             oldItem == newItem
     }
 
     val differ = AsyncListDiffer(this, myDiffUtilCallBack)
 
-    var notes: List<Note>
+    var notes: MutableList<Wf>
         get() = differ.currentList
         set(value) = differ.submitList(value)
 //================================================================================================
@@ -38,9 +40,9 @@ class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
 
     // 0. Определяем CLASS ViewHolder
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(note: Note) {
-            itemView.findViewById<TextView>(R.id.item_title).text = note.mTitle
-            itemView.findViewById<TextView>(R.id.item_carbon_dm_title_value).text = note.avatarUrl
+        fun bind(wf: Wf) {
+            itemView.findViewById<TextView>(R.id.item_title).text = wf.biopacks[0].bioComment
+            //itemView.findViewById<TextView>(R.id.item_carbon_dm_title_value).text = wf.avatarUrl
             //itemView.findViewById<ImageView>(R.id.iv_avatar).load(R.drawable.ic_launcher_foreground)
         }
     }
@@ -52,7 +54,7 @@ class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false))
 
 
-    // 2. Наполняем (связываем) viewHolder с данными (подставляем в шаблон конкретные значения Note)
+    // 2. Наполняем (связываем) viewHolder с данными (подставляем в шаблон конкретные значения wf)
     override fun onBindViewHolder(holder: NotesRvAdapter.ViewHolder, position: Int) =
         holder.bind(notes[position])
 
@@ -60,8 +62,8 @@ class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
     override fun getItemCount(): Int = notes.size
 
 
-    fun updateNote(newNotes: List<Note>) {
-        this.notes = newNotes
+    fun updateNote(newWfs: ArrayList<Wf>) {
+        this.notes = newWfs
     }
 
 }

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.igo.tracking.R
 import com.igo.tracking.databinding.FragmentBiomassBinding
 import com.igo.tracking.model.FakeNotesRepository
+import com.igo.tracking.model.RepWf
+import com.igo.tracking.model.RepWf.getListWfs
 import com.igo.tracking.model.constants.*
 import com.igo.tracking.model.entity.Biopack
 
@@ -64,7 +66,7 @@ class BiomassFragment : Fragment() {
 
 
         // ВАРИАНТ 1. передаем данные (которые забрали в моделе) из сохраненных
-        mRvAdapter.updateNote(FakeNotesRepository.getNotes())
+        mRvAdapter.updateNote(getListWfs())
 
 
 

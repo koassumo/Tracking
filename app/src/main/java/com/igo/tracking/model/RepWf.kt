@@ -13,6 +13,7 @@ object RepWf {
         // adding zero workflow consists of 6 biopacks
         // it is used only like default
         wfs.add(Wf())
+        wfs.add(Wf())
 
         // about 0st row:
         // 0st column - 1st plant (destination)
@@ -56,7 +57,7 @@ object RepWf {
         }
     }
 
-    fun getListWfs(): List<Wf> {
+    fun getListWfs(): ArrayList<Wf> {
         return wfs
     }
 
