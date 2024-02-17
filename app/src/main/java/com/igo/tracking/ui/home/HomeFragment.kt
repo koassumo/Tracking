@@ -11,19 +11,20 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.gms.maps.model.LatLng
 import com.igo.tracking.R
 import com.igo.tracking.databinding.FragmentHomeBinding
-import com.igo.tracking.model.RepositoryProject
-import com.igo.tracking.model.constants.PACK_ID
-import com.igo.tracking.model.entity.Biomass
+import com.igo.tracking.model.RepositoryProject.getProj
+import com.igo.tracking.model.constants.WF_ID
+import com.igo.tracking.model.entity.Biopack
 import com.igo.tracking.model.entity.Proj
+
 
 class HomeFragment : Fragment() {
 
     companion object {
-        val proj1: Proj = RepositoryProject.getProj(0)
-        val proj2: Proj = RepositoryProject.getProj(1)
+        val proj1: Proj = getProj(0)
+        val proj2: Proj = getProj(1)
         private lateinit var factoryLatLang: LatLng // Поле для хранения координаты второй точки
 
-        val pack: ArrayList<Biomass> = ArrayList(10)
+        val pack: ArrayList<Biopack> = ArrayList(10)
     }
 
 
@@ -41,8 +42,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -78,14 +79,14 @@ class HomeFragment : Fragment() {
         binding.projIconLoc.setOnClickListener {
             findNavController().navigate(
                 R.id.action_bm_nav_home_to_locFragment,
-                bundleOf(PACK_ID to 0)
+                bundleOf(WF_ID to 0)
             )
         }
 
         binding.projIconLoc2.setOnClickListener {
             findNavController().navigate(
                 R.id.action_bm_nav_home_to_locFragment,
-                bundleOf(PACK_ID to 1)
+                bundleOf(WF_ID to -1)
             )
         }
 

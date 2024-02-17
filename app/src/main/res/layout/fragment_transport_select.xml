@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/step_huge_xxx">
+        android:paddingBottom="@dimen/step_huge_xx">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/trs_title"
@@ -252,29 +252,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/trs_site" />
 
-
         <TextView
-            android:id="@+id/trs_site_latlng"
+            android:id="@+id/trs_site_latitude"
             style="@style/txt_common_small"
-            android:text="@string/latitude_longitude"
+            android:text="@string/latitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/trs_site_address" />
 
 
+        <TextView
+            android:id="@+id/trs_site_latitude_value"
+            style="@style/txt_common_value"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/trs_site_latitude"
+            app:layout_constraintStart_toEndOf="@id/trs_site_latitude"
+            app:layout_constraintTop_toTopOf="@id/trs_site_latitude" />
 
+        <TextView
+            android:id="@+id/trs_site_longitude"
+            style="@style/txt_common_small"
+            android:text="@string/longitude"
+            android:layout_marginTop="@dimen/margin_top_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/trs_site_latitude" />
 
-        <!--            <NumberPicker-->
-        <!--                android:id="@+id/trs_carbon_dm_picker"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginStart="@dimen/margin_start_normal"-->
-        <!--                android:layout_marginTop="@dimen/margin_top_normal"-->
-        <!--                app:layout_constraintTop_toTopOf="@+id/trs_carbon_dm_layout"-->
-        <!--                app:layout_constraintStart_toEndOf="@id/trs_carbon_dm_layout"-->
-        <!--                android:background="@color/primary_color"-->
-        <!--                android:inputType="numberDecimal"-->
-        <!--                android:maxLength="10" />-->
+        <TextView
+            android:id="@+id/trs_site_longitude_value"
+            style="@style/txt_common_value"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/trs_site_longitude"
+            app:layout_constraintStart_toEndOf="@id/trs_site_longitude"
+            app:layout_constraintTop_toTopOf="@id/trs_site_longitude" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/trs_onmap"
@@ -282,7 +291,7 @@
             android:layout_marginTop="@dimen/margin_top_small"
             android:text="@string/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trs_site_latlng" />
+            app:layout_constraintTop_toBottomOf="@+id/trs_site_longitude" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/trs_submit"

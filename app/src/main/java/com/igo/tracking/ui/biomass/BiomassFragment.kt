@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.igo.tracking.R
 import com.igo.tracking.databinding.FragmentBiomassBinding
 import com.igo.tracking.model.constants.*
-import com.igo.tracking.model.entity.Biomass
+import com.igo.tracking.model.entity.Biopack
 
 
 class BiomassFragment : Fragment() {
@@ -20,7 +21,7 @@ class BiomassFragment : Fragment() {
     companion object {
         var packsNumber: Int = 0
 
-        val pack: ArrayList<Biomass> = ArrayList(10)
+        val pack: ArrayList<Biopack> = ArrayList(10)
     }
 
     private var _binding: FragmentBiomassBinding? = null
@@ -56,32 +57,36 @@ class BiomassFragment : Fragment() {
         binding.biomassAddBtn.setOnClickListener {
             findNavController().navigate(
                 R.id.action_nav_biomass_to_biomassSelectFragment,
-                bundleOf(PACK_ID to "1")
+                bundleOf(WF_ID to "1")
             )
         }
 
 
-        // getting data when return from selectFragment
-        parentFragmentManager.setFragmentResultListener(RESPOND, viewLifecycleOwner) { _, data ->
-            binding.biomassMoistureTitle.text = "fd"
+//        // getting data when return from selectFragment
+//        parentFragmentManager.setFragmentResultListener(RESPOND, viewLifecycleOwner) { _, data ->
+//            binding.biomassMoistureTitle.text = "fd"
+//        }
+        // (_2) Здесь отлавливаем передаваемые данные при возврате с последующего экрана (по методу _2), БЕЗ ОБРАБОТКИ ДАННЫХ !!!
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Int>(RESPOND)?.observe(viewLifecycleOwner) {
+            val index = it
+            Toast.makeText(requireContext(), "Random number NOT processed: $index", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun renderPacks() {
         if (pack.size > 0) {
-            binding.biomassInfo1TitleValue.text = pack[0].biomassID.toString()
-            binding.biomassTypeTitleValue.text = pack[0].biomassType
-            binding.biomassWeightTitleValue.text = pack[0].biomassWeight.toString()
-            binding.biomassMoistureTitleValue.text = pack[0].biomassMoisture.toString()
-            binding.biomassCarbonDmTitleValue.text = pack[0].biomassCarbonInDm.toString()
+            binding.biomassInfo1TitleValue.text = pack[0].bioID.toString()
+            binding.biomassTypeTitleValue.text = pack[0].bioType
+            binding.biomassWeightTitleValue.text = pack[0].bioWeight.toString()
+            binding.biomassMoistureTitleValue.text = pack[0].bioMoisture.toString()
+            binding.biomassCarbonDmTitleValue.text = pack[0].bioCarbonInDm.toString()
         }
          if (pack.size > 1) {
-            binding.biomassInfo2TitleValue.text = pack[1].biomassID.toString()
-            binding.biomassTypeTitleValue2.text = pack[1].biomassType
-            binding.biomassWeightTitleValue2.text = pack[1].biomassWeight.toString()
-            binding.biomassMoistureTitleValue2.text = pack[1].biomassMoisture.toString()
-            binding.biomassCarbonDmTitleValue2.text = pack[1].biomassCarbonInDm.toString()
+            binding.biomassInfo2TitleValue.text = pack[1].bioID.toString()
+            binding.biomassTypeTitleValue2.text = pack[1].bioType
+            binding.biomassWeightTitleValue2.text = pack[1].bioWeight.toString()
+            binding.biomassMoistureTitleValue2.text = pack[1].bioMoisture.toString()
+            binding.biomassCarbonDmTitleValue2.text = pack[1].bioCarbonInDm.toString()
         }
     }
 

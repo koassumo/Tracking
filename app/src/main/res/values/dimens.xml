@@ -21,7 +21,7 @@
 
     <!--large-->
     <dimen name="step_huge_xxx">320dp</dimen>
-    <dimen name="step_huge_xx">300dp</dimen>
+    <dimen name="step_huge_xx">160dp</dimen>
     <dimen name="step_huge_x">136dp</dimen>
     <dimen name="step_huge">100dp</dimen>
 
@@ -101,7 +101,7 @@
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_normal_plus">16sp</dimen>
     <dimen name="text_size_normal">12sp</dimen>
-    <dimen name="text_size_small">8sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
 
 
     <dimen name="percent_icon">0.35</dimen>

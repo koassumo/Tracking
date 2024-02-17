@@ -48,16 +48,16 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.bm_nav_home, R.id.bm_nav_biomass, R.id.bm_nav_trans, R.id.bm_nav_pyrolysis
+                R.id.bm_nav_home, R.id.bm_nav_biomass, R.id.bm_nav_trans, R.id.bm_nav_pyrolysis, R.id.bm_nav_sale, R.id.bm_nav_corc
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
         // 2nd menu - Bottom Navigation
         //val bottomNavView: BottomNavigationView = findViewById(R.id.bm_nav_view)
         //bottomNavView.setupWithNavController(navController)
-
         bottomNavigationView = findViewById(R.id.bm_nav_view)
         bottomNavigationView.setupWithNavController(navController)
 

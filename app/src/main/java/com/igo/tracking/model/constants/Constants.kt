@@ -3,7 +3,14 @@ package com.igo.tracking.model.constants
 const val RESPOND = "RESPOND"
 const val NOT_SELECTED = "NOT_SELECTED"
 
-const val PACK_ID = "PACK_ID"
+const val WF_ID = "WF_ID"
+const val WF_COMMENT = "WF_COMMENT"
+const val WF_ADDRESS = "WF_ADDRESS"
+const val WF_LAT = "WF_LAT"
+const val WF_LNG = "WF_LNG"
+const val WF_DISTANCE = "WF_DISTANCE"
+
+
 
 const val GROUP_1 = "GROUP_1"
 const val GROUP_2 = "GROUP_2"

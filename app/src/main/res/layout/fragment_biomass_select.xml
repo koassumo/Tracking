@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/step_huge_xxx">
+        android:paddingBottom="@dimen/step_huge_xx">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bs_title"
@@ -199,22 +199,68 @@
 
 
         <TextView
-            android:id="@+id/bs_site_address"
+            android:id="@+id/bs_site_comment"
             style="@style/txt_common_small"
-            android:text="@string/address"
+            android:text="comment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site" />
 
+        <TextView
+            android:id="@+id/bs_site_address"
+            style="@style/txt_common_small"
+            android:text="@string/address"
+            android:layout_marginTop="@dimen/margin_top_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bs_site_comment" />
 
         <TextView
-            android:id="@+id/bs_site_latlng"
+            android:id="@+id/bs_site_latitude"
             style="@style/txt_common_small"
-            android:text="@string/latitude_longitude"
+            android:text="@string/latitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site_address" />
 
 
+        <TextView
+            android:id="@+id/bs_site_latitude_value"
+            style="@style/txt_common_value"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/bs_site_latitude"
+            app:layout_constraintStart_toEndOf="@id/bs_site_latitude"
+            app:layout_constraintTop_toTopOf="@id/bs_site_latitude" />
+
+        <TextView
+            android:id="@+id/bs_site_longitude"
+            style="@style/txt_common_small"
+            android:text="@string/longitude"
+            android:layout_marginTop="@dimen/margin_top_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bs_site_latitude" />
+
+        <TextView
+            android:id="@+id/bs_site_longitude_value"
+            style="@style/txt_common_value"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/bs_site_longitude"
+            app:layout_constraintStart_toEndOf="@id/bs_site_longitude"
+            app:layout_constraintTop_toTopOf="@id/bs_site_longitude" />
+
+        <TextView
+            android:id="@+id/bs_site_distance"
+            style="@style/txt_common_small"
+            android:text="@string/distance_to_plant_km"
+            android:layout_marginTop="@dimen/margin_top_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bs_site_longitude" />
+
+        <TextView
+            android:id="@+id/bs_site_distance_value"
+            style="@style/txt_common_value"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/bs_site_distance"
+            app:layout_constraintStart_toEndOf="@id/bs_site_distance"
+            app:layout_constraintTop_toTopOf="@id/bs_site_distance" />
 
 
         <!--            <NumberPicker-->
@@ -235,7 +281,7 @@
             android:layout_marginTop="@dimen/margin_top_small"
             android:text="@string/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bs_site_latlng" />
+            app:layout_constraintTop_toBottomOf="@+id/bs_site_distance" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bs_submit"

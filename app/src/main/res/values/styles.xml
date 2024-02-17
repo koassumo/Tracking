@@ -100,6 +100,12 @@
         <item name="android:layout_marginTop">@dimen/margin_top_normal</item>
     </style>
 
+    <style name="txt_common_value" parent="txt_common">
+        <item name="android:textSize">@dimen/text_size_normal_plus</item>
+        <item name="android:layout_marginTop">@dimen/step_zero</item>
+        <item name="android:layout_marginStart">@dimen/margin_start_small</item>
+    </style>
+
 
     <style name="iv_txt_first" parent="iv_inside_common">
         <item name="android:textSize">@dimen/text_size_normal_plus</item>

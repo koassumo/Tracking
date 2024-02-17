@@ -5,10 +5,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/bm_nav_home"
-            android:icon="@drawable/ic_projects_24"
-            android:title="@string/menu_home" />
-        <item
             android:id="@+id/bm_nav_biomass"
             android:icon="@drawable/ic_biomass_24"
             android:title="@string/menu_biomass" />
@@ -25,7 +21,7 @@
             android:icon="@drawable/ic_sale_24"
             android:title="@string/menu_sale" />
         <item
-            android:id="@+id/bm_nav_co2"
+            android:id="@+id/bm_nav_corc"
             android:icon="@drawable/ic_co2_24"
             android:title="@string/menu_corc" />
     </group>

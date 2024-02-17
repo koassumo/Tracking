@@ -14,7 +14,7 @@
     <string name="menu_sale">Sales</string>
     <string name="menu_corc">CORCs</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment"> </string>
     <string name="biomass_package">Biomass Package #</string>
     <string name="trans_package">Transport Package #</string>
     <string name="c_type">Type: </string>
@@ -22,7 +22,7 @@
     <string name="c_moisture">Moisture, %: </string>
     <string name="c_carbon_dm_title">Carbon in dry matter, %: </string>
 
-    <string name="bs_package">Select biomass data</string>
+    <string name="bs_package">Select biomass data pack</string>
     <string name="bs_type">Type</string>
     <string name="bs_weight">Weight, kg</string>
     <string name="bs_moisture">Moisture, %</string>
@@ -58,13 +58,16 @@
     <string name="proj_number_of_reactors">Number of reactors:</string>
     <string name="proj_total_power">Total power:</string>
     <string name="ok">Ok</string>
-    <string name="latitude_longitude">Latitude: Longitude:</string>
+    <string name="latitude">Latitude: </string>
+    <string name="longitude">Longitude: </string>
     <string name="address">Address</string>
     <string name="map">Map</string>
     <string name="select_truck">Select truck</string>
     <string name="corc_pack">CORC</string>
     <string name="progress">Progress: </string>
     <string name="start">Start</string>
+    <string name="select_point_on_map">Select point on map</string>
+    <string name="distance_to_plant_km">Distance to plant, km: </string>
 
 
 </resources>

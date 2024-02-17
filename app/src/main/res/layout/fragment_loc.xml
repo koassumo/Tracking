@@ -15,15 +15,15 @@
         android:layout_height="match_parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/step_huge_x"
+        android:layout_height="@dimen/step_huge_xx"
         app:cardBackgroundColor="#CCFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/card_constraint">
+        <androidx.constraintlayout.widget.ConstraintLayout style="@style/card_constraint">
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -31,14 +31,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.70"/>
+                app:layout_constraintGuide_percent="0.70" />
 
             <TextView
-                android:id="@+id/loc_txt_plant"
+                android:id="@+id/loc_txt_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/hello_blank_fragment"
                 android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/hello_blank_fragment"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/loc_guide"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,9 +50,80 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/step_x_large"
                 android:text="@string/hello_blank_fragment"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/loc_guide"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/loc_txt_plant" />
+                app:layout_constraintTop_toBottomOf="@id/loc_txt_comment" />
+
+            <TextView
+                android:id="@+id/loc_txt_lat_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:layout_marginTop="@dimen/margin_top_small"
+                android:text="@string/latitude"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loc_txt_address" />
+
+            <TextView
+                android:id="@+id/loc_txt_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/hello_blank_fragment"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/loc_txt_lat_title"
+                app:layout_constraintEnd_toStartOf="@+id/loc_guide"
+                app:layout_constraintStart_toEndOf="@+id/loc_txt_lat_title"
+                app:layout_constraintTop_toTopOf="@+id/loc_txt_lat_title" />
+
+            <TextView
+                android:id="@+id/loc_txt_lng_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/longitude"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loc_txt_lat" />
+
+            <TextView
+                android:id="@+id/loc_txt_lng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/hello_blank_fragment"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/loc_txt_lng_title"
+                app:layout_constraintEnd_toStartOf="@+id/loc_guide"
+                app:layout_constraintStart_toEndOf="@+id/loc_txt_lng_title"
+                app:layout_constraintTop_toTopOf="@+id/loc_txt_lng_title" />
+
+            <TextView
+                android:id="@+id/loc_txt_distance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:layout_marginTop="@dimen/margin_top_small"
+                android:text="@string/distance_to_plant_km"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loc_txt_lng_title" />
+
+            <TextView
+                android:id="@+id/loc_txt_distance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/step_x_large"
+                android:text="@string/hello_blank_fragment"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/loc_txt_distance_title"
+                app:layout_constraintEnd_toStartOf="@+id/loc_guide"
+                app:layout_constraintStart_toEndOf="@+id/loc_txt_distance_title"
+                app:layout_constraintTop_toTopOf="@+id/loc_txt_distance_title" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loc_ok"
@@ -69,6 +141,7 @@
                 android:layout_width="@dimen/step_zero"
                 android:layout_margin="@dimen/step_zero"
                 android:text="@string/change"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/loc_guide"
                 app:layout_constraintTop_toBottomOf="@id/loc_ok" />
@@ -76,4 +149,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/loc_txt_choose_map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/all_common"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
+        android:text="@string/select_point_on_map"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
