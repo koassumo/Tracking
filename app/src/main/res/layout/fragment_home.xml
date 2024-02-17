@@ -55,14 +55,14 @@
 
                     <TextView
                         android:id="@+id/proj_info_1_title"
-                        style="@style/iv_txt_title"
+                        style="@style/cv_title"
                         android:text="@string/rottweil"
                         app:layout_constraintStart_toStartOf="@+id/proj_pack_1_guide"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/proj_info_1_title_value"
-                        style="@style/iv_txt_title_value"
+                        style="@style/cv_title_value"
                         android:text=""
                         app:layout_constraintStart_toEndOf="@id/proj_info_1_title"
                         app:layout_constraintTop_toTopOf="@id/proj_info_1_title" />
@@ -222,14 +222,14 @@
 
                     <TextView
                         android:id="@+id/proj_info_2_title"
-                        style="@style/iv_txt_title"
+                        style="@style/cv_title"
                         android:text="@string/proj_blodnoch"
                         app:layout_constraintStart_toStartOf="@+id/proj_pack_2_guide"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/proj_info_2_title_value"
-                        style="@style/iv_txt_title_value"
+                        style="@style/cv_title_value"
                         android:text=""
                         app:layout_constraintStart_toEndOf="@id/proj_info_2_title"
                         app:layout_constraintTop_toTopOf="@id/proj_info_2_title" />

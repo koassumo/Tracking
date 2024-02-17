@@ -1,153 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_n"
+    android:id="@+id/i_biomass_n"
+    style="@style/card_common_trans"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/card_common_trans"    
     android:visibility="visible">
 
-<!--        <View-->
-<!--            android:id="@+id/item_info_1_btn"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:elevation="@dimen/elevation_large" />-->
+    <!--        <View-->
+    <!--            android:id="@+id/i_biomass_info_1_btn"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:elevation="@dimen/elevation_large" />-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout 
-            style="@style/card_constraint">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/card_constraint">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_center"
+            style="@style/i_guideline_vertical"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
 
-            <!--                    <ImageView-->
-            <!--                        android:id="@+id/item_info_1_icon"-->
-            <!--                        android:layout_width="@dimen/card_icon_small"-->
-            <!--                        android:layout_height="@dimen/card_icon_small"-->
-            <!--                        android:src="@drawable/ic_menu_slideshow"-->
-            <!--                        app:layout_constraintStart_toStartOf="parent"-->
-            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/i_cv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/item_title"
-                style="@style/iv_txt_title"
-                android:text="@string/trans_package"
-                app:layout_constraintStart_toStartOf="parent"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/i_status"
+                style="@style/iv_txt_tint"
+                android:text="@string/biomass_status_raw"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/item_title_value"
-                style="@style/iv_txt_title_value"
-                android:text=""
-                app:layout_constraintStart_toEndOf="@id/item_title"
-                app:layout_constraintTop_toTopOf="@id/item_title" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/item_cv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/primary_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/item_title">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/item_status"
-                    style="@style/iv_txt_tint"
-                    android:text="@string/biomass_status_raw"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.card.MaterialCardView>
 
 
-            </com.google.android.material.card.MaterialCardView>
+        <ImageView
+            android:id="@+id/i_biomass_arrow_down"
+            style="@style/iv_inside_arrow"
+            android:src="@drawable/ic_arrow_down_24"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_cv_status" />
+
+        <ImageView
+            android:id="@+id/i_biomass_arrow_up"
+            style="@style/iv_inside_arrow"
+            android:src="@drawable/ic_arrow_up_24"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_cv_status" />
 
 
-            <ImageView
-                android:id="@+id/item_arrow_down"
-                android:layout_width="@dimen/card_icon_small"
-                android:layout_height="@dimen/card_icon_small"
-                android:src="@drawable/ic_arrow_down_24"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_cv_status" />
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/i_biomass_info_1_icon"-->
+        <!--                        android:layout_width="@dimen/card_icon_small"-->
+        <!--                        android:layout_height="@dimen/card_icon_small"-->
+        <!--                        android:src="@drawable/ic_menu_slideshow"-->
+        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+        <!--                        app:layout_constraintTop_toTopOf="parent" />-->
 
-            <ImageView
-                android:id="@+id/item_arrow_up"
-                android:layout_width="@dimen/card_icon_small"
-                android:layout_height="@dimen/card_icon_small"
-                android:src="@drawable/ic_arrow_up_24"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_cv_status" />
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_biomass_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="i_biomass_title,
+                                    i_biomass_id,
+                                    i_biomass_date,
+                                    i_biomass_comment,
+                                    i_biomass_comment_value,
+                                    i_biomass_address,
+                                    i_biomass_address_value,
+                                    i_biomass_latitude,
+                                    i_biomass_latitude_value,
+                                    i_biomass_longitude,
+                                    i_biomass_longitude_value,
+                                    i_biomass_distance,
+                                    i_biomass_distance_value,
+                                    i_biomass_btn_map,
+                                    i_biomass_type,
+                                    i_biomass_type_value,
+                                    i_biomass_weight,
+                                    i_biomass_weight_value,
+                                    i_biomass_moisture,
+                                    i_biomass_moisture_value,
+                                    i_biomass_carbon,
+                                    i_biomass_carbon_value,
+                                    i_biomass_progress,
+                                    i_biomass_progress_value,
+                                    i_biomass_progress_bar,
+                                    i_biomass_in,
+                                    i_biomass_in_value,
+                                    i_biomass_out,
+                                    i_biomass_out_value,
+                                    i_biomass_btn_start,
+                                    i_biomass_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_biomass_title"
+            style="@style/cv_title"
+            android:text="@string/biomass_package_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/i_biomass_id"
+            style="@style/cv_title_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_title"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_title" />
+
+        <TextView
+            android:id="@+id/i_biomass_date"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_title" />
+
+        <TextView
+            android:id="@+id/i_biomass_date_value"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_date"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_date" />
+
+        <TextView
+            android:id="@+id/i_biomass_comment"
+            style="@style/cv_txt_first"
+            android:text="@string/c_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_date" />
+
+        <TextView
+            android:id="@+id/i_biomass_comment_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_comment"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_comment" />
+
+        <TextView
+            android:id="@+id/i_biomass_address"
+            style="@style/cv_txt"
+            android:text="@string/c_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_comment_value" />
+
+        <TextView
+            android:id="@+id/i_biomass_address_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_address"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_address" />
+
+        <TextView
+            android:id="@+id/i_biomass_latitude"
+            style="@style/cv_txt"
+            android:text="@string/c_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_address" />
+
+        <TextView
+            android:id="@+id/i_biomass_latitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_latitude"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_latitude" />
+
+        <TextView
+            android:id="@+id/i_biomass_longitude"
+            style="@style/cv_txt"
+            android:text="@string/c_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_latitude" />
+
+        <TextView
+            android:id="@+id/i_biomass_longitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_longitude"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_longitude" />
+
+        <TextView
+            android:id="@+id/i_biomass_distance"
+            style="@style/cv_txt"
+            android:text="@string/c_distance_to_plant_km"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_longitude" />
+
+        <TextView
+            android:id="@+id/i_biomass_distance_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_distance"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_distance" />
 
 
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/eye_group_grandparents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:constraint_referenced_ids="item_type_title,
-                                                        item_weight_title,
-                                                        item_moisture_title,
-                                                        item_carbon_dm_title" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_biomass_btn_map"
+            style="@style/i_btn_common"
+            android:text="@string/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_biomass_distance" />
 
 
-            <TextView
-                android:id="@+id/item_type_title"
-                style="@style/iv_txt_first"
-                android:text="@string/c_type"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_title" />
+        <TextView
+            android:id="@+id/i_biomass_type"
+            style="@style/cv_txt_first"
+            android:text="@string/c_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_biomass_btn_map" />
 
-            <TextView
-                android:id="@+id/item_type_title_value"
-                style="@style/iv_txt_value"
-                android:text=""
-                app:layout_constraintStart_toEndOf="@id/item_type_title"
-                app:layout_constraintTop_toTopOf="@id/item_type_title" />
+        <TextView
+            android:id="@+id/i_biomass_type_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_type"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_type" />
 
-            <TextView
-                android:id="@+id/item_weight_title"
-                style="@style/iv_txt"
-                android:text="@string/c_weight"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_type_title" />
+        <TextView
+            android:id="@+id/i_biomass_weight"
+            style="@style/cv_txt"
+            android:text="@string/c_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_type" />
 
-            <TextView
-                android:id="@+id/item_weight_title_value"
-                style="@style/iv_txt_value"
-                android:text=""
-                app:layout_constraintStart_toEndOf="@id/item_weight_title"
-                app:layout_constraintTop_toTopOf="@id/item_weight_title" />
+        <TextView
+            android:id="@+id/i_biomass_weight_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_weight"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_weight" />
 
-            <TextView
-                android:id="@+id/item_moisture_title"
-                style="@style/iv_txt"
-                android:text="@string/c_moisture"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_weight_title" />
+        <TextView
+            android:id="@+id/i_biomass_moisture"
+            style="@style/cv_txt"
+            android:text="@string/c_moisture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_weight" />
 
-            <TextView
-                android:id="@+id/item_moisture_title_value"
-                style="@style/iv_txt_value"
-                android:text=""
-                app:layout_constraintStart_toEndOf="@id/item_moisture_title"
-                app:layout_constraintTop_toTopOf="@id/item_moisture_title" />
-
-
-            <TextView
-                android:id="@+id/item_carbon_dm_title"
-                style="@style/iv_txt"
-                android:text="@string/c_carbon_dm_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_moisture_title" />
-
-            <TextView
-                android:id="@+id/item_carbon_dm_title_value"
-                style="@style/iv_txt_value"
-                android:text=""
-                app:layout_constraintStart_toEndOf="@id/item_carbon_dm_title"
-                app:layout_constraintTop_toTopOf="@id/item_carbon_dm_title" />
+        <TextView
+            android:id="@+id/i_biomass_moisture_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_moisture"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_moisture" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/i_biomass_carbon"
+            style="@style/cv_txt"
+            android:text="@string/c_carbon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_moisture" />
+
+        <TextView
+            android:id="@+id/i_biomass_carbon_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_carbon"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_carbon" />
+
+
+        <TextView
+            android:id="@+id/i_biomass_progress"
+            style="@style/cv_txt_first"
+            android:text="@string/progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_carbon" />
+
+        <TextView
+            android:id="@+id/i_biomass_progress_value"
+            style="@style/cv_txt_value"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/i_biomass_progress"
+            app:layout_constraintTop_toTopOf="@+id/i_biomass_progress" />
+
+        <ProgressBar
+            android:id="@+id/i_biomass_progress_bar"
+            style="@style/i_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_biomass_progress_value" />
+<!--        style="?android:attr/progressBarStyleHorizontal"-->
+
+        <TextView
+            android:id="@+id/i_biomass_in"
+            style="@style/cv_txt"
+            android:text="@string/c_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_biomass_in_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_biomass_in"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_in" />
+
+        <TextView
+            android:id="@+id/i_biomass_out"
+            style="@style/cv_txt"
+            android:text="@string/c_out"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_biomass_out_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/i_biomass_out"
+            app:layout_constraintTop_toTopOf="@id/i_biomass_out" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_biomass_btn_start"
+            style="@style/i_btn_common"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_in" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_biomass_btn_finish"
+            style="@style/i_btn_common"
+            android:text="@string/finish"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_in" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </com.google.android.material.card.MaterialCardView>

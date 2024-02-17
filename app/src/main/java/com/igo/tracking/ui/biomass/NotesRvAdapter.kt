@@ -41,7 +41,8 @@ class NotesRvAdapter : RecyclerView.Adapter<NotesRvAdapter.ViewHolder>() {
     // 0. Определяем CLASS ViewHolder
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(wf: Wf) {
-            itemView.findViewById<TextView>(R.id.item_title).text = wf.biopacks[0].bioComment
+            itemView.findViewById<TextView>(R.id.i_biomass_title).text = wf.biopacks[0].bioComment
+
             //itemView.findViewById<TextView>(R.id.item_carbon_dm_title_value).text = wf.avatarUrl
             //itemView.findViewById<ImageView>(R.id.iv_avatar).load(R.drawable.ic_launcher_foreground)
         }

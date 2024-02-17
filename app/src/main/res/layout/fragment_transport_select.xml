@@ -248,14 +248,14 @@
         <TextView
             android:id="@+id/trs_site_address"
             style="@style/txt_common_small"
-            android:text="@string/address"
+            android:text="@string/c_address"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/trs_site" />
 
         <TextView
             android:id="@+id/trs_site_latitude"
             style="@style/txt_common_small"
-            android:text="@string/latitude"
+            android:text="@string/c_latitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/trs_site_address" />
@@ -272,7 +272,7 @@
         <TextView
             android:id="@+id/trs_site_longitude"
             style="@style/txt_common_small"
-            android:text="@string/longitude"
+            android:text="@string/c_longitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/trs_site_latitude" />

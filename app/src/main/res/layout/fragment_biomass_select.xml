@@ -208,7 +208,7 @@
         <TextView
             android:id="@+id/bs_site_address"
             style="@style/txt_common_small"
-            android:text="@string/address"
+            android:text="@string/c_address"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site_comment" />
@@ -216,7 +216,7 @@
         <TextView
             android:id="@+id/bs_site_latitude"
             style="@style/txt_common_small"
-            android:text="@string/latitude"
+            android:text="@string/c_latitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site_address" />
@@ -233,7 +233,7 @@
         <TextView
             android:id="@+id/bs_site_longitude"
             style="@style/txt_common_small"
-            android:text="@string/longitude"
+            android:text="@string/c_longitude"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site_latitude" />
@@ -249,7 +249,7 @@
         <TextView
             android:id="@+id/bs_site_distance"
             style="@style/txt_common_small"
-            android:text="@string/distance_to_plant_km"
+            android:text="@string/c_distance_to_plant_km"
             android:layout_marginTop="@dimen/margin_top_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bs_site_longitude" />

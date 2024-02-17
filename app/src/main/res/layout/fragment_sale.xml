@@ -46,14 +46,14 @@
 
                     <TextView
                         android:id="@+id/trans_info_1_title"
-                        style="@style/iv_txt_title"
+                        style="@style/cv_title"
                         android:text="@string/trans_package"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/trans_info_1_title_value"
-                        style="@style/iv_txt_title_value"
+                        style="@style/cv_title_value"
                         android:text=""
                         app:layout_constraintStart_toEndOf="@id/trans_info_1_title"
                         app:layout_constraintTop_toTopOf="@id/trans_info_1_title" />
@@ -153,7 +153,7 @@
                     <TextView
                         android:id="@+id/trans_carbon_dm_title"
                         style="@style/iv_txt"
-                        android:text="@string/c_carbon_dm_title"
+                        android:text="@string/c_carbon"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/trans_moisture_title" />
 
@@ -198,14 +198,14 @@
 
                     <TextView
                         android:id="@+id/trans_info_2_title"
-                        style="@style/iv_txt_title"
+                        style="@style/cv_title"
                         android:text="@string/trans_package"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/trans_info_2_title_value"
-                        style="@style/iv_txt_title_value"
+                        style="@style/cv_title_value"
                         android:text=""
                         app:layout_constraintStart_toEndOf="@id/trans_info_2_title"
                         app:layout_constraintTop_toTopOf="@id/trans_info_2_title" />
@@ -307,7 +307,7 @@
                     <TextView
                         android:id="@+id/trans_carbon_dm_title_2"
                         style="@style/iv_txt"
-                        android:text="@string/c_carbon_dm_title"
+                        android:text="@string/c_carbon"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/trans_moisture_title_2" />
 
@@ -348,7 +348,7 @@
             <TextView
                 android:id="@+id/trans_summary_carbon"
                 style="@style/txt_common"
-                android:text="@string/c_carbon_dm_title"
+                android:text="@string/c_carbon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trans_summary_moisture" />
 

@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/step_x_large"
                 android:layout_marginTop="@dimen/margin_top_small"
-                android:text="@string/latitude"
+                android:text="@string/c_latitude"
                 android:textSize="@dimen/text_size_small"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loc_txt_address" />
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/step_x_large"
-                android:text="@string/longitude"
+                android:text="@string/c_longitude"
                 android:textSize="@dimen/text_size_small"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loc_txt_lat" />
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/step_x_large"
                 android:layout_marginTop="@dimen/margin_top_small"
-                android:text="@string/distance_to_plant_km"
+                android:text="@string/c_distance_to_plant_km"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loc_txt_lng_title" />
