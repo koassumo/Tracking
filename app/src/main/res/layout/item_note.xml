@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_n"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/card_common_trans"    
+    android:visibility="visible">
+
+<!--        <View-->
+<!--            android:id="@+id/item_info_1_btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:elevation="@dimen/elevation_large" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout 
+            style="@style/card_constraint">
+
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/item_info_1_icon"-->
+            <!--                        android:layout_width="@dimen/card_icon_small"-->
+            <!--                        android:layout_height="@dimen/card_icon_small"-->
+            <!--                        android:src="@drawable/ic_menu_slideshow"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <TextView
+                android:id="@+id/item_title"
+                style="@style/iv_txt_title"
+                android:text="@string/trans_package"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_title_value"
+                style="@style/iv_txt_title_value"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@id/item_title"
+                app:layout_constraintTop_toTopOf="@id/item_title" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/item_cv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/item_title">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/item_status"
+                    style="@style/iv_txt_tint"
+                    android:text="@string/biomass_status_raw"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <ImageView
+                android:id="@+id/item_arrow_down"
+                android:layout_width="@dimen/card_icon_small"
+                android:layout_height="@dimen/card_icon_small"
+                android:src="@drawable/ic_arrow_down_24"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_cv_status" />
+
+            <ImageView
+                android:id="@+id/item_arrow_up"
+                android:layout_width="@dimen/card_icon_small"
+                android:layout_height="@dimen/card_icon_small"
+                android:src="@drawable/ic_arrow_up_24"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_cv_status" />
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/eye_group_grandparents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="item_type_title,
+                                                        item_weight_title,
+                                                        item_moisture_title,
+                                                        item_carbon_dm_title" />
+
+
+            <TextView
+                android:id="@+id/item_type_title"
+                style="@style/iv_txt_first"
+                android:text="@string/c_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_title" />
+
+            <TextView
+                android:id="@+id/item_type_title_value"
+                style="@style/iv_txt_value"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@id/item_type_title"
+                app:layout_constraintTop_toTopOf="@id/item_type_title" />
+
+            <TextView
+                android:id="@+id/item_weight_title"
+                style="@style/iv_txt"
+                android:text="@string/c_weight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_type_title" />
+
+            <TextView
+                android:id="@+id/item_weight_title_value"
+                style="@style/iv_txt_value"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@id/item_weight_title"
+                app:layout_constraintTop_toTopOf="@id/item_weight_title" />
+
+            <TextView
+                android:id="@+id/item_moisture_title"
+                style="@style/iv_txt"
+                android:text="@string/c_moisture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_weight_title" />
+
+            <TextView
+                android:id="@+id/item_moisture_title_value"
+                style="@style/iv_txt_value"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@id/item_moisture_title"
+                app:layout_constraintTop_toTopOf="@id/item_moisture_title" />
+
+
+            <TextView
+                android:id="@+id/item_carbon_dm_title"
+                style="@style/iv_txt"
+                android:text="@string/c_carbon_dm_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_moisture_title" />
+
+            <TextView
+                android:id="@+id/item_carbon_dm_title_value"
+                style="@style/iv_txt_value"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@id/item_carbon_dm_title"
+                app:layout_constraintTop_toTopOf="@id/item_carbon_dm_title" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

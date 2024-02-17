@@ -16,6 +16,14 @@
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/step_huge_xx">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_notes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/step_huge_xxx"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <!-- Pack 1 -->
             <com.google.android.material.card.MaterialCardView
@@ -24,7 +32,7 @@
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/rv_notes">
 
                 <View
                     android:id="@+id/biomass_info_1_btn"

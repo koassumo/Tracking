@@ -9,8 +9,10 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.igo.tracking.R
 import com.igo.tracking.databinding.FragmentBiomassBinding
+import com.igo.tracking.model.FakeNotesRepository
 import com.igo.tracking.model.constants.*
 import com.igo.tracking.model.entity.Biopack
 
@@ -29,6 +31,9 @@ class BiomassFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    // 1. ADAPTER создаем
+    private val mRvAdapter: NotesRvAdapter by lazy { NotesRvAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,6 +56,17 @@ class BiomassFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 2. На "rv в xml" накладываем layout ( можно Grid или любой)
+        binding.rvNotes.layoutManager = LinearLayoutManager(requireContext())
+        // 3. На "rv в xml" накладываем созданный в п.1 адаптер
+        binding.rvNotes.adapter = mRvAdapter
+
+
+        // ВАРИАНТ 1. передаем данные (которые забрали в моделе) из сохраненных
+        mRvAdapter.updateNote(FakeNotesRepository.getNotes())
+
+
 
         renderPacks()
 
