@@ -79,9 +79,9 @@ class LocFragment : Fragment(), OnMapReadyCallback {
             bLatLng = wF.biopacks[0].bioLatLng
         } else {                                                 //default second plant site (destination) (row 0, column 5)(tmp)
             val wF = getWf(0)
-            bComment = wF.biopacks[5].bioComment
-            bAddress = wF.biopacks[5].bioAddress
-            bLatLng = wF.biopacks[5].bioLatLng
+            bComment = wF.biopacks[4].bioComment
+            bAddress = wF.biopacks[4].bioAddress
+            bLatLng = wF.biopacks[4].bioLatLng
         }
 
         binding.locOk.setOnClickListener {
@@ -102,7 +102,7 @@ class LocFragment : Fragment(), OnMapReadyCallback {
         //Toast.makeText(context,bLatLang.latitude.toString() + "  " + bLatLang.longitude.toString(), Toast.LENGTH_SHORT).show()
 
         // Plant (destination)
-        plantLatLng = getWf(0).biopacks[5].bioLatLng
+        plantLatLng = getWf(0).biopacks[4].bioLatLng
         addMarkerPlant ()
 
 

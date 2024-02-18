@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/i_biomass_n"
     style="@style/card_common_trans"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="visible">
+
+<!--    data binding может не работать без этого-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
 
     <!--        <View-->
     <!--            android:id="@+id/i_biomass_info_1_btn"-->
@@ -20,6 +24,21 @@
             style="@style/i_guideline_vertical"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.55" />
+
+
+        <TextView
+            android:id="@+id/i_pack_title"
+            style="@style/cv_title_x"
+            android:text="@string/pack_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/i_pack_id"
+            style="@style/cv_title_x_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pack_title"
+            app:layout_constraintTop_toTopOf="@id/i_pack_title" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/i_cv_status"
@@ -53,6 +72,16 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i_cv_status" />
+
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/i_pack_btn_edit"-->
+<!--            style="@style/i_btn_right"-->
+<!--            android:text="@string/edit"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/i_cv_status"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+
 
 
         <!--                    <ImageView-->
@@ -105,7 +134,7 @@
             style="@style/cv_title"
             android:text="@string/biomass_package_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/i_pack_title" />
 
         <TextView
             android:id="@+id/i_biomass_id"
@@ -329,6 +358,1090 @@
             app:layout_constraintStart_toStartOf="@+id/guide_center"
             app:layout_constraintTop_toBottomOf="@id/i_biomass_in" />
 
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_biomass_group_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids=",
+                                    i_biomass_progress,
+                                    i_biomass_progress_value,
+                                    i_biomass_progress_bar,
+                                    i_biomass_in,
+                                    i_biomass_in_value,
+                                    i_biomass_out,
+                                    i_biomass_out_value,
+                                    i_biomass_btn_start,
+                                    i_biomass_btn_finish" />
+
+
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_transp_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="i_transp_title,
+                                    i_transp_id,
+                                    i_transp_date,
+                                    i_transp_comment,
+                                    i_transp_comment_value,
+                                    i_transp_address,
+                                    i_transp_address_value,
+                                    i_transp_latitude,
+                                    i_transp_latitude_value,
+                                    i_transp_longitude,
+                                    i_transp_longitude_value,
+                                    i_transp_distance,
+                                    i_transp_distance_value,
+                                    i_transp_btn_map,
+                                    i_transp_type,
+                                    i_transp_type_value,
+                                    i_transp_weight,
+                                    i_transp_weight_value,
+                                    i_transp_moisture,
+                                    i_transp_moisture_value,
+                                    i_transp_carbon,
+                                    i_transp_carbon_value,
+                                    i_transp_progress,
+                                    i_transp_progress_value,
+                                    i_transp_progress_bar,
+                                    i_transp_in,
+                                    i_transp_in_value,
+                                    i_transp_out,
+                                    i_transp_out_value,
+                                    i_transp_btn_start,
+                                    i_transp_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_transp_title"
+            style="@style/cv_title"
+            android:text="@string/trans_package_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_biomass_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_transp_id"
+            style="@style/cv_title_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_title"
+            app:layout_constraintTop_toTopOf="@id/i_transp_title" />
+
+        <TextView
+            android:id="@+id/i_transp_date"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_title" />
+
+        <TextView
+            android:id="@+id/i_transp_date_value"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_date"
+            app:layout_constraintTop_toTopOf="@id/i_transp_date" />
+
+        <TextView
+            android:id="@+id/i_transp_comment"
+            style="@style/cv_txt_first"
+            android:text="@string/c_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_date" />
+
+        <TextView
+            android:id="@+id/i_transp_comment_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_comment"
+            app:layout_constraintTop_toTopOf="@id/i_transp_comment" />
+
+        <TextView
+            android:id="@+id/i_transp_address"
+            style="@style/cv_txt"
+            android:text="@string/c_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_comment_value" />
+
+        <TextView
+            android:id="@+id/i_transp_address_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_address"
+            app:layout_constraintTop_toTopOf="@id/i_transp_address" />
+
+        <TextView
+            android:id="@+id/i_transp_latitude"
+            style="@style/cv_txt"
+            android:text="@string/c_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_address" />
+
+        <TextView
+            android:id="@+id/i_transp_latitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_latitude"
+            app:layout_constraintTop_toTopOf="@id/i_transp_latitude" />
+
+        <TextView
+            android:id="@+id/i_transp_longitude"
+            style="@style/cv_txt"
+            android:text="@string/c_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_latitude" />
+
+        <TextView
+            android:id="@+id/i_transp_longitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_longitude"
+            app:layout_constraintTop_toTopOf="@id/i_transp_longitude" />
+
+        <TextView
+            android:id="@+id/i_transp_distance"
+            style="@style/cv_txt"
+            android:text="@string/c_distance_to_plant_km"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_longitude" />
+
+        <TextView
+            android:id="@+id/i_transp_distance_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_distance"
+            app:layout_constraintTop_toTopOf="@id/i_transp_distance" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_transp_btn_map"
+            style="@style/i_btn_common"
+            android:text="@string/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_transp_distance" />
+
+
+        <TextView
+            android:id="@+id/i_transp_type"
+            style="@style/cv_txt_first"
+            android:text="@string/c_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_transp_btn_map" />
+
+        <TextView
+            android:id="@+id/i_transp_type_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_type"
+            app:layout_constraintTop_toTopOf="@id/i_transp_type" />
+
+        <TextView
+            android:id="@+id/i_transp_weight"
+            style="@style/cv_txt"
+            android:text="@string/c_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_type" />
+
+        <TextView
+            android:id="@+id/i_transp_weight_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_weight"
+            app:layout_constraintTop_toTopOf="@id/i_transp_weight" />
+
+        <TextView
+            android:id="@+id/i_transp_moisture"
+            style="@style/cv_txt"
+            android:text="@string/c_moisture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_weight" />
+
+        <TextView
+            android:id="@+id/i_transp_moisture_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_moisture"
+            app:layout_constraintTop_toTopOf="@id/i_transp_moisture" />
+
+
+        <TextView
+            android:id="@+id/i_transp_carbon"
+            style="@style/cv_txt"
+            android:text="@string/c_carbon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_moisture" />
+
+        <TextView
+            android:id="@+id/i_transp_carbon_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_carbon"
+            app:layout_constraintTop_toTopOf="@id/i_transp_carbon" />
+
+
+        <TextView
+            android:id="@+id/i_transp_progress"
+            style="@style/cv_txt_first"
+            android:text="@string/progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_carbon" />
+
+        <TextView
+            android:id="@+id/i_transp_progress_value"
+            style="@style/cv_txt_value"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/i_transp_progress"
+            app:layout_constraintTop_toTopOf="@+id/i_transp_progress" />
+
+        <ProgressBar
+            android:id="@+id/i_transp_progress_bar"
+            style="@style/i_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_transp_progress_value" />
+        <!--        style="?android:attr/progressBarStyleHorizontal"-->
+
+        <TextView
+            android:id="@+id/i_transp_in"
+            style="@style/cv_txt_time"
+            android:text="@string/c_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_transp_in_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_transp_in"
+            app:layout_constraintTop_toTopOf="@id/i_transp_in" />
+
+        <TextView
+            android:id="@+id/i_transp_out"
+            style="@style/cv_txt_time"
+            android:text="@string/c_out"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_transp_out_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/i_transp_out"
+            app:layout_constraintTop_toTopOf="@id/i_transp_out" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_transp_btn_start"
+            style="@style/i_btn_common"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_in" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_transp_btn_finish"
+            style="@style/i_btn_common"
+            android:text="@string/finish"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_in" />
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_pyr_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="i_pyr_title,
+                                    i_pyr_id,
+                                    i_pyr_date,
+                                    i_pyr_comment,
+                                    i_pyr_comment_value,
+                                    i_pyr_address,
+                                    i_pyr_address_value,
+                                    i_pyr_latitude,
+                                    i_pyr_latitude_value,
+                                    i_pyr_longitude,
+                                    i_pyr_longitude_value,
+                                    i_pyr_distance,
+                                    i_pyr_distance_value,
+                                    i_pyr_btn_map,
+                                    i_pyr_type,
+                                    i_pyr_type_value,
+                                    i_pyr_weight,
+                                    i_pyr_weight_value,
+                                    i_pyr_moisture,
+                                    i_pyr_moisture_value,
+                                    i_pyr_carbon,
+                                    i_pyr_carbon_value,
+                                    i_pyr_progress,
+                                    i_pyr_progress_value,
+                                    i_pyr_progress_bar,
+                                    i_pyr_in,
+                                    i_pyr_in_value,
+                                    i_pyr_out,
+                                    i_pyr_out_value,
+                                    i_pyr_btn_start,
+                                    i_pyr_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_pyr_title"
+            style="@style/cv_title"
+            android:text="@string/pyr_package_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_transp_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_pyr_id"
+            style="@style/cv_title_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_title"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_title" />
+
+        <TextView
+            android:id="@+id/i_pyr_date"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_title" />
+
+        <TextView
+            android:id="@+id/i_pyr_date_value"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_date"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_date" />
+
+        <TextView
+            android:id="@+id/i_pyr_comment"
+            style="@style/cv_txt_first"
+            android:text="@string/c_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_date" />
+
+        <TextView
+            android:id="@+id/i_pyr_comment_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_comment"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_comment" />
+
+        <TextView
+            android:id="@+id/i_pyr_address"
+            style="@style/cv_txt"
+            android:text="@string/c_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_comment_value" />
+
+        <TextView
+            android:id="@+id/i_pyr_address_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_address"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_address" />
+
+        <TextView
+            android:id="@+id/i_pyr_latitude"
+            style="@style/cv_txt"
+            android:text="@string/c_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_address" />
+
+        <TextView
+            android:id="@+id/i_pyr_latitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_latitude"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_latitude" />
+
+        <TextView
+            android:id="@+id/i_pyr_longitude"
+            style="@style/cv_txt"
+            android:text="@string/c_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_latitude" />
+
+        <TextView
+            android:id="@+id/i_pyr_longitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_longitude"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_longitude" />
+
+        <TextView
+            android:id="@+id/i_pyr_distance"
+            style="@style/cv_txt"
+            android:text="@string/c_distance_to_plant_km"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_longitude" />
+
+        <TextView
+            android:id="@+id/i_pyr_distance_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_distance"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_distance" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_pyr_btn_map"
+            style="@style/i_btn_common"
+            android:text="@string/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_pyr_distance" />
+
+
+        <TextView
+            android:id="@+id/i_pyr_type"
+            style="@style/cv_txt_first"
+            android:text="@string/c_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_pyr_btn_map" />
+
+        <TextView
+            android:id="@+id/i_pyr_type_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_type"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_type" />
+
+        <TextView
+            android:id="@+id/i_pyr_weight"
+            style="@style/cv_txt"
+            android:text="@string/c_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_type" />
+
+        <TextView
+            android:id="@+id/i_pyr_weight_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_weight"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_weight" />
+
+        <TextView
+            android:id="@+id/i_pyr_moisture"
+            style="@style/cv_txt"
+            android:text="@string/c_moisture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_weight" />
+
+        <TextView
+            android:id="@+id/i_pyr_moisture_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_moisture"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_moisture" />
+
+
+        <TextView
+            android:id="@+id/i_pyr_carbon"
+            style="@style/cv_txt"
+            android:text="@string/c_carbon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_moisture" />
+
+        <TextView
+            android:id="@+id/i_pyr_carbon_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_carbon"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_carbon" />
+
+
+        <TextView
+            android:id="@+id/i_pyr_progress"
+            style="@style/cv_txt_first"
+            android:text="@string/progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_carbon" />
+
+        <TextView
+            android:id="@+id/i_pyr_progress_value"
+            style="@style/cv_txt_value"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/i_pyr_progress"
+            app:layout_constraintTop_toTopOf="@+id/i_pyr_progress" />
+
+        <ProgressBar
+            android:id="@+id/i_pyr_progress_bar"
+            style="@style/i_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_pyr_progress_value" />
+        <!--        style="?android:attr/progressBarStyleHorizontal"-->
+
+        <TextView
+            android:id="@+id/i_pyr_in"
+            style="@style/cv_txt_time"
+            android:text="@string/c_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_pyr_in_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_pyr_in"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_in" />
+
+        <TextView
+            android:id="@+id/i_pyr_out"
+            style="@style/cv_txt_time"
+            android:text="@string/c_out"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_pyr_out_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/i_pyr_out"
+            app:layout_constraintTop_toTopOf="@id/i_pyr_out" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_pyr_btn_start"
+            style="@style/i_btn_common"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_in" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_pyr_btn_finish"
+            style="@style/i_btn_common"
+            android:text="@string/finish"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_in" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_sale_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="i_sale_title,
+                                    i_sale_id,
+                                    i_sale_date,
+                                    i_sale_comment,
+                                    i_sale_comment_value,
+                                    i_sale_address,
+                                    i_sale_address_value,
+                                    i_sale_latitude,
+                                    i_sale_latitude_value,
+                                    i_sale_longitude,
+                                    i_sale_longitude_value,
+                                    i_sale_distance,
+                                    i_sale_distance_value,
+                                    i_sale_btn_map,
+                                    i_sale_type,
+                                    i_sale_type_value,
+                                    i_sale_weight,
+                                    i_sale_weight_value,
+                                    i_sale_moisture,
+                                    i_sale_moisture_value,
+                                    i_sale_carbon,
+                                    i_sale_carbon_value,
+                                    i_sale_progress,
+                                    i_sale_progress_value,
+                                    i_sale_progress_bar,
+                                    i_sale_in,
+                                    i_sale_in_value,
+                                    i_sale_out,
+                                    i_sale_out_value,
+                                    i_sale_btn_start,
+                                    i_sale_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_sale_title"
+            style="@style/cv_title"
+            android:text="@string/sale_package_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_pyr_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_sale_id"
+            style="@style/cv_title_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_title"
+            app:layout_constraintTop_toTopOf="@id/i_sale_title" />
+
+        <TextView
+            android:id="@+id/i_sale_date"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_title" />
+
+        <TextView
+            android:id="@+id/i_sale_date_value"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_date"
+            app:layout_constraintTop_toTopOf="@id/i_sale_date" />
+
+        <TextView
+            android:id="@+id/i_sale_comment"
+            style="@style/cv_txt_first"
+            android:text="@string/c_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_date" />
+
+        <TextView
+            android:id="@+id/i_sale_comment_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_comment"
+            app:layout_constraintTop_toTopOf="@id/i_sale_comment" />
+
+        <TextView
+            android:id="@+id/i_sale_address"
+            style="@style/cv_txt"
+            android:text="@string/c_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_comment_value" />
+
+        <TextView
+            android:id="@+id/i_sale_address_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_address"
+            app:layout_constraintTop_toTopOf="@id/i_sale_address" />
+
+        <TextView
+            android:id="@+id/i_sale_latitude"
+            style="@style/cv_txt"
+            android:text="@string/c_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_address" />
+
+        <TextView
+            android:id="@+id/i_sale_latitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_latitude"
+            app:layout_constraintTop_toTopOf="@id/i_sale_latitude" />
+
+        <TextView
+            android:id="@+id/i_sale_longitude"
+            style="@style/cv_txt"
+            android:text="@string/c_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_latitude" />
+
+        <TextView
+            android:id="@+id/i_sale_longitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_longitude"
+            app:layout_constraintTop_toTopOf="@id/i_sale_longitude" />
+
+        <TextView
+            android:id="@+id/i_sale_distance"
+            style="@style/cv_txt"
+            android:text="@string/c_distance_to_plant_km"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_longitude" />
+
+        <TextView
+            android:id="@+id/i_sale_distance_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_distance"
+            app:layout_constraintTop_toTopOf="@id/i_sale_distance" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_sale_btn_map"
+            style="@style/i_btn_common"
+            android:text="@string/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_sale_distance" />
+
+
+        <TextView
+            android:id="@+id/i_sale_type"
+            style="@style/cv_txt_first"
+            android:text="@string/c_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_sale_btn_map" />
+
+        <TextView
+            android:id="@+id/i_sale_type_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_type"
+            app:layout_constraintTop_toTopOf="@id/i_sale_type" />
+
+        <TextView
+            android:id="@+id/i_sale_weight"
+            style="@style/cv_txt"
+            android:text="@string/c_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_type" />
+
+        <TextView
+            android:id="@+id/i_sale_weight_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_weight"
+            app:layout_constraintTop_toTopOf="@id/i_sale_weight" />
+
+        <TextView
+            android:id="@+id/i_sale_moisture"
+            style="@style/cv_txt"
+            android:text="@string/c_moisture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_weight" />
+
+        <TextView
+            android:id="@+id/i_sale_moisture_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_moisture"
+            app:layout_constraintTop_toTopOf="@id/i_sale_moisture" />
+
+
+        <TextView
+            android:id="@+id/i_sale_carbon"
+            style="@style/cv_txt"
+            android:text="@string/c_carbon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_moisture" />
+
+        <TextView
+            android:id="@+id/i_sale_carbon_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_carbon"
+            app:layout_constraintTop_toTopOf="@id/i_sale_carbon" />
+
+
+        <TextView
+            android:id="@+id/i_sale_progress"
+            style="@style/cv_txt_first"
+            android:text="@string/progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_carbon" />
+
+        <TextView
+            android:id="@+id/i_sale_progress_value"
+            style="@style/cv_txt_value"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/i_sale_progress"
+            app:layout_constraintTop_toTopOf="@+id/i_sale_progress" />
+
+        <ProgressBar
+            android:id="@+id/i_sale_progress_bar"
+            style="@style/i_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_sale_progress_value" />
+        <!--        style="?android:attr/progressBarStyleHorizontal"-->
+
+        <TextView
+            android:id="@+id/i_sale_in"
+            style="@style/cv_txt_time"
+            android:text="@string/c_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_sale_in_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_sale_in"
+            app:layout_constraintTop_toTopOf="@id/i_sale_in" />
+
+        <TextView
+            android:id="@+id/i_sale_out"
+            style="@style/cv_txt_time"
+            android:text="@string/c_out"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_sale_out_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/i_sale_out"
+            app:layout_constraintTop_toTopOf="@id/i_sale_out" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_sale_btn_start"
+            style="@style/i_btn_common"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_in" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_sale_btn_finish"
+            style="@style/i_btn_common"
+            android:text="@string/finish"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_in" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/i_corc_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="i_corc_title,
+                                    i_corc_id,
+                                    i_corc_date,
+                                    i_corc_comment,
+                                    i_corc_comment_value,
+                                    i_corc_address,
+                                    i_corc_address_value,
+                                    i_corc_latitude,
+                                    i_corc_latitude_value,
+                                    i_corc_longitude,
+                                    i_corc_longitude_value,
+                                    i_corc_distance,
+                                    i_corc_distance_value,
+                                    i_corc_btn_map,
+                                    i_corc_type,
+                                    i_corc_type_value,
+                                    i_corc_weight,
+                                    i_corc_weight_value,
+                                    i_corc_moisture,
+                                    i_corc_moisture_value,
+                                    i_corc_carbon,
+                                    i_corc_carbon_value,
+                                    i_corc_progress,
+                                    i_corc_progress_value,
+                                    i_corc_progress_bar,
+                                    i_corc_in,
+                                    i_corc_in_value,
+                                    i_corc_out,
+                                    i_corc_out_value,
+                                    i_corc_btn_start,
+                                    i_corc_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_corc_title"
+            style="@style/cv_title"
+            android:text="@string/corc_package_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_sale_btn_finish" />
+
+        <TextView
+            android:id="@+id/i_corc_id"
+            style="@style/cv_title_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_title"
+            app:layout_constraintTop_toTopOf="@id/i_corc_title" />
+
+        <TextView
+            android:id="@+id/i_corc_date"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_title" />
+
+        <TextView
+            android:id="@+id/i_corc_date_value"
+            style="@style/cv_txt_under"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_date"
+            app:layout_constraintTop_toTopOf="@id/i_corc_date" />
+
+        <TextView
+            android:id="@+id/i_corc_comment"
+            style="@style/cv_txt_first"
+            android:text="@string/c_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_date" />
+
+        <TextView
+            android:id="@+id/i_corc_comment_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_comment"
+            app:layout_constraintTop_toTopOf="@id/i_corc_comment" />
+
+        <TextView
+            android:id="@+id/i_corc_address"
+            style="@style/cv_txt"
+            android:text="@string/c_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_comment_value" />
+
+        <TextView
+            android:id="@+id/i_corc_address_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_address"
+            app:layout_constraintTop_toTopOf="@id/i_corc_address" />
+
+        <TextView
+            android:id="@+id/i_corc_latitude"
+            style="@style/cv_txt"
+            android:text="@string/c_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_address" />
+
+        <TextView
+            android:id="@+id/i_corc_latitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_latitude"
+            app:layout_constraintTop_toTopOf="@id/i_corc_latitude" />
+
+        <TextView
+            android:id="@+id/i_corc_longitude"
+            style="@style/cv_txt"
+            android:text="@string/c_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_latitude" />
+
+        <TextView
+            android:id="@+id/i_corc_longitude_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_longitude"
+            app:layout_constraintTop_toTopOf="@id/i_corc_longitude" />
+
+        <TextView
+            android:id="@+id/i_corc_distance"
+            style="@style/cv_txt"
+            android:text="@string/c_distance_to_plant_km"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_longitude" />
+
+        <TextView
+            android:id="@+id/i_corc_distance_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_distance"
+            app:layout_constraintTop_toTopOf="@id/i_corc_distance" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_corc_btn_map"
+            style="@style/i_btn_common"
+            android:text="@string/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_corc_distance" />
+
+
+        <TextView
+            android:id="@+id/i_corc_type"
+            style="@style/cv_txt_first"
+            android:text="@string/c_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_corc_btn_map" />
+
+        <TextView
+            android:id="@+id/i_corc_type_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_type"
+            app:layout_constraintTop_toTopOf="@id/i_corc_type" />
+
+        <TextView
+            android:id="@+id/i_corc_weight"
+            style="@style/cv_txt"
+            android:text="@string/c_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_type" />
+
+        <TextView
+            android:id="@+id/i_corc_weight_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_weight"
+            app:layout_constraintTop_toTopOf="@id/i_corc_weight" />
+
+        <TextView
+            android:id="@+id/i_corc_moisture"
+            style="@style/cv_txt"
+            android:text="@string/c_moisture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_weight" />
+
+        <TextView
+            android:id="@+id/i_corc_moisture_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_moisture"
+            app:layout_constraintTop_toTopOf="@id/i_corc_moisture" />
+
+
+        <TextView
+            android:id="@+id/i_corc_carbon"
+            style="@style/cv_txt"
+            android:text="@string/c_carbon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_moisture" />
+
+        <TextView
+            android:id="@+id/i_corc_carbon_value"
+            style="@style/cv_txt_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_carbon"
+            app:layout_constraintTop_toTopOf="@id/i_corc_carbon" />
+
+
+        <TextView
+            android:id="@+id/i_corc_progress"
+            style="@style/cv_txt_first"
+            android:text="@string/progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_carbon" />
+
+        <TextView
+            android:id="@+id/i_corc_progress_value"
+            style="@style/cv_txt_value"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/i_corc_progress"
+            app:layout_constraintTop_toTopOf="@+id/i_corc_progress" />
+
+        <ProgressBar
+            android:id="@+id/i_corc_progress_bar"
+            style="@style/i_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_corc_progress_value" />
+        <!--        style="?android:attr/progressBarStyleHorizontal"-->
+
+        <TextView
+            android:id="@+id/i_corc_in"
+            style="@style/cv_txt_time"
+            android:text="@string/c_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_corc_in_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@id/i_corc_in"
+            app:layout_constraintTop_toTopOf="@id/i_corc_in" />
+
+        <TextView
+            android:id="@+id/i_corc_out"
+            style="@style/cv_txt_time"
+            android:text="@string/c_out"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_progress_bar" />
+
+        <TextView
+            android:id="@+id/i_corc_out_value"
+            style="@style/cv_txt_time_value"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/i_corc_out"
+            app:layout_constraintTop_toTopOf="@id/i_corc_out" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_corc_btn_start"
+            style="@style/i_btn_common"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_in" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/i_corc_btn_finish"
+            style="@style/i_btn_common"
+            android:text="@string/finish"
+            app:layout_constraintStart_toStartOf="@+id/guide_center"
+            app:layout_constraintTop_toBottomOf="@id/i_corc_in" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

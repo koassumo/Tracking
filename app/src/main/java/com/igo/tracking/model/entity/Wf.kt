@@ -8,6 +8,5 @@ data class Wf (
         Biopack(),
         Biopack(),
         Biopack(),
-        Biopack()
     )
 )

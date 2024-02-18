@@ -115,7 +115,7 @@ class BiomassSelectFragment : Fragment() {
     }
 
     private fun submitNewWf() {
-        BiomassFragment.packsNumber++
+        //BiomassFragment.packsNumber++
 
         // radio recognizing
         val checkedId = binding.bsRadioGroup.checkedRadioButtonId
@@ -129,7 +129,7 @@ class BiomassSelectFragment : Fragment() {
 
 
         val newBiopack = Biopack(
-            bioID = BiomassFragment.packsNumber,
+            bioID = 98989,
             bioDate = Date(),
             bioType = selectedRadioText,
             bioWeight = binding.bsWeight.text.toString().toDouble(),
@@ -146,7 +146,7 @@ class BiomassSelectFragment : Fragment() {
         addWf(newBiopack)
         val index = getWfSize()
         Toast.makeText(requireContext(), index.toString(), Toast.LENGTH_LONG).show()
-        BiomassFragment.pack.add(newBiopack)
+        //BiomassFragment.pack.add(newBiopack)
 
         //findNavController().previousBackStackEntry?.savedStateHandle?.set(RESPOND, index)
         findNavController().popBackStack()

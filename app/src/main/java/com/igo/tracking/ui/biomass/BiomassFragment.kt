@@ -22,11 +22,11 @@ import com.igo.tracking.model.entity.Biopack
 class BiomassFragment : Fragment() {
 
 
-    companion object {
-        var packsNumber: Int = 0
-
-        val pack: ArrayList<Biopack> = ArrayList(10)
-    }
+//    companion object {
+//        var packsNumber: Int = 0
+//
+//        val pack: ArrayList<Biopack> = ArrayList(10)
+//    }
 
     private var _binding: FragmentBiomassBinding? = null
 
@@ -66,11 +66,15 @@ class BiomassFragment : Fragment() {
 
 
         // ВАРИАНТ 1. передаем данные (которые забрали в моделе) из сохраненных
-        mRvAdapter.updateNote(getListWfs())
+        val filteredWfs = getListWfs().filter {
+            it.biopacks[0].bioStatus == RAW
+        }
+        mRvAdapter.updateNote(ArrayList(filteredWfs))
 
 
 
-        renderPacks()
+
+        //renderPacks()
 
         binding.biomassAddBtn.setOnClickListener {
             findNavController().navigate(
@@ -91,22 +95,22 @@ class BiomassFragment : Fragment() {
         }
     }
 
-    private fun renderPacks() {
-        if (pack.size > 0) {
-            binding.biomassInfo1TitleValue.text = pack[0].bioID.toString()
-            binding.biomassTypeTitleValue.text = pack[0].bioType
-            binding.biomassWeightTitleValue.text = pack[0].bioWeight.toString()
-            binding.biomassMoistureTitleValue.text = pack[0].bioMoisture.toString()
-            binding.biomassCarbonDmTitleValue.text = pack[0].bioCarbonInDm.toString()
-        }
-         if (pack.size > 1) {
-            binding.biomassInfo2TitleValue.text = pack[1].bioID.toString()
-            binding.biomassTypeTitleValue2.text = pack[1].bioType
-            binding.biomassWeightTitleValue2.text = pack[1].bioWeight.toString()
-            binding.biomassMoistureTitleValue2.text = pack[1].bioMoisture.toString()
-            binding.biomassCarbonDmTitleValue2.text = pack[1].bioCarbonInDm.toString()
-        }
-    }
+//    private fun renderPacks() {
+//        if (pack.size > 0) {
+//            binding.biomassInfo1TitleValue.text = pack[0].bioID.toString()
+//            binding.biomassTypeTitleValue.text = pack[0].bioType
+//            binding.biomassWeightTitleValue.text = pack[0].bioWeight.toString()
+//            binding.biomassMoistureTitleValue.text = pack[0].bioMoisture.toString()
+//            binding.biomassCarbonDmTitleValue.text = pack[0].bioCarbonInDm.toString()
+//        }
+//         if (pack.size > 1) {
+//            binding.biomassInfo2TitleValue.text = pack[1].bioID.toString()
+//            binding.biomassTypeTitleValue2.text = pack[1].bioType
+//            binding.biomassWeightTitleValue2.text = pack[1].bioWeight.toString()
+//            binding.biomassMoistureTitleValue2.text = pack[1].bioMoisture.toString()
+//            binding.biomassCarbonDmTitleValue2.text = pack[1].bioCarbonInDm.toString()
+//        }
+//    }
 
 
     override fun onDestroyView() {

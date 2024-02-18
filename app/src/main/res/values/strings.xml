@@ -20,6 +20,7 @@
     <string name="hello_blank_fragment"> </string>
     <string name="trans_package">Transport #</string>
 
+    <string name="pack_title">Pack ID #</string>
     <string name="biomass_package_title">Biomass #</string>
     <string name="trans_package_title">Transport #</string>
     <string name="dry_package_title">Drying #</string>
@@ -79,6 +80,7 @@
     <string name="ok">Ok</string>
 
 
+    <string name="edit">Edit</string>
     <string name="map">Map</string>
     <string name="select_truck">Select truck</string>
     <string name="corc_pack">CORC</string>

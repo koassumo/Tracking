@@ -97,7 +97,7 @@
     <!-- ********************************  Text  ********************************  -->
     <dimen name="text_size_banner">32sp</dimen>
     <dimen name="text_size_appbar">20sp</dimen>
-    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_normal_plus">16sp</dimen>
     <dimen name="text_size_normal">12sp</dimen>
